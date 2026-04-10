@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LeaveFlow — Employee Leave Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ══ BACKGROUND GLOW LAYERS ══ -->
+  <div class="glow-top-left"></div>
+  <div class="glow-bottom-right"></div>
+
+  <!-- ══════════════════════════════
+       SIDEBAR
+  ══════════════════════════════ -->
+  <aside class="sidebar">
+
+    <!-- Logo -->
+    <div class="logo">
+      <div class="logo-icon">🗓️</div>
+      <span class="logo-text">LeaveFlow</span>
+    </div>
+
+    <!-- Primary Nav -->
+    <div class="nav-group">
+      <p class="nav-section-label">Main</p>
+      <a href="#" class="nav-item nav-item--active">
+        <span class="nav-icon">📊</span> Dashboard
+      </a>
+      <!-- <a href="#" class="nav-item">
+        <span class="nav-icon">📋</span> My Leaves
+        <span class="badge">3</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">👥</span> Team View
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📅</span> Calendar
+      </a> -->
+    </div>
+
+    <!-- Admin Nav -->
+    <div class="nav-group">
+      <p class="nav-section-label">Admin</p>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">⚙️</span> Approvals
+        <span class="badge">7</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🏢</span> Departments
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📄</span> Reports
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🔔</span> Notifications
+      </a>
+    </div>
+
+    <!-- Settings Nav -->
+    <!-- <div class="nav-group">
+      <p class="nav-section-label">Settings</p>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🔧</span> Configuration
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">👤</span> Profile
+      </a>
+    </div> -->
+
+    <!-- User Card -->
+    <!-- <div class="sidebar-footer">
+      <div class="user-card">
+        <div class="avatar">RK</div>
+        <div class="user-info">
+          <p class="user-name">Rahul Kumar</p>
+          <p class="user-role">HR Manager</p>
+        </div>
+      </div>
+    </div> -->
+
+  </aside>
+
+  <!-- ══════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════ -->
+  <main class="main">
+
+    <!-- ── TOP BAR ── -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <h1 class="page-title">Leave Dashboard</h1>
+        <p class="page-subtitle">Monday, 07 April 2025 &nbsp;·&nbsp; Q2 2025</p>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn--ghost">📥 Export</button>
+        <button class="btn btn--ghost">
+          🔔 Alerts <span class="badge badge--inline">5</span>
+        </button>
+        <button class="btn btn--primary">➕ Apply Leave</button>
+      </div>
+    </div>
+
+    <!-- ── STAT CARDS ── -->
+    <div class="stats-grid">
+
+      <div class="stat-card stat-card--blue">
+        <span class="stat-delta stat-delta--up">↑ 4</span>
+        <div class="stat-icon stat-icon--blue">📋</div>
+        <p class="stat-value stat-value--blue">142</p>
+        <p class="stat-label">Total Requests</p>
+      </div>
+
+      <div class="stat-card stat-card--green">
+        <span class="stat-delta stat-delta--up">↑ 8</span>
+        <div class="stat-icon stat-icon--green">✅</div>
+        <p class="stat-value stat-value--green">98</p>
+        <p class="stat-label">Approved</p>
+      </div>
+
+      <div class="stat-card stat-card--yellow">
+        <span class="stat-delta stat-delta--neutral">→ 0</span>
+        <div class="stat-icon stat-icon--yellow">⏳</div>
+        <p class="stat-value stat-value--yellow">27</p>
+        <p class="stat-label">Pending Review</p>
+      </div>
+
+      <div class="stat-card stat-card--red">
+        <span class="stat-delta stat-delta--down">↓ 2</span>
+        <div class="stat-icon stat-icon--red">❌</div>
+        <p class="stat-value stat-value--red">17</p>
+        <p class="stat-label">Rejected</p>
+      </div>
+
+    </div>
+
+    <!-- ── CONTENT ROW ── -->
+    <div class="content-row">
+
+      <!-- ── LEAVE REQUESTS TABLE ── -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Recent Leave Requests</h2>
+          <div class="card-header-actions">
+            <div class="search-bar">
+              <span class="search-icon">🔍</span>
+              <input class="search-input" type="text" placeholder="Search employee…"/>
+            </div>
+            <button class="btn btn--ghost btn--sm">Filter ▾</button>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th class="th">Employee</th>
+                <th class="th">Leave Type</th>
+                <th class="th">Duration</th>
+                <th class="th">Days</th>
+                <th class="th">Status</th>
+                <th class="th">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- Row 1 -->
+              <tr class="table-row">
+                <td class="td">
+                  <div class="emp-cell">
+                    <div class="mini-avatar mini-avatar--blue">AP</div>
+                    <div>
+                      <p class="emp-name">Ananya Patel</p>
+                      <p class="emp-dept">Engineering</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="td"><span class="leave-type-tag">Casual</span></td>
+                <td class="td"><span class="date-range">Apr 10 – Apr 12</span></td>
+                <td class="td"><span class="days-count days-count--blue">3d</span></td>
+                <td class="td"><span class="status-pill status-pill--pending">Pending</span></td>
+                <td class="td">
+                  <div class="action-btns">
+                    <button class="icon-btn icon-btn--approve" title="Approve">✓</button>
+                    <button class="icon-btn icon-btn--reject" title="Reject">✕</button>
+                    <button class="icon-btn" title="View">👁</button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr class="table-row">
+                <td class="td">
+                  <div class="emp-cell">
+                    <div class="mini-avatar mini-avatar--green">VR</div>
+                    <div>
+                      <p class="emp-name">Vikram Reddy</p>
+                      <p class="emp-dept">Product</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="td"><span class="leave-type-tag">Sick</span></td>
+                <td class="td"><span class="date-range">Apr 7 – Apr 8</span></td>
+                <td class="td"><span class="days-count days-count--green">2d</span></td>
+                <td class="td"><span class="status-pill status-pill--approved">Approved</span></td>
+                <td class="td">
+                  <div class="action-btns">
+                    <button class="icon-btn" title="Edit">✏️</button>
+                    <button class="icon-btn" title="View">👁</button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr class="table-row">
+                <td class="td">
+                  <div class="emp-cell">
+                    <div class="mini-avatar mini-avatar--yellow">SM</div>
+                    <div>
+                      <p class="emp-name">Sneha Mehta</p>
+                      <p class="emp-dept">Design</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="td"><span class="leave-type-tag">Earned</span></td>
+                <td class="td"><span class="date-range">Apr 14 – Apr 18</span></td>
+                <td class="td"><span class="days-count days-count--yellow">5d</span></td>
+                <td class="td"><span class="status-pill status-pill--pending">Pending</span></td>
+                <td class="td">
+                  <div class="action-btns">
+                    <button class="icon-btn icon-btn--approve" title="Approve">✓</button>
+                    <button class="icon-btn icon-btn--reject" title="Reject">✕</button>
+                    <button class="icon-btn" title="View">👁</button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr class="table-row">
+                <td class="td">
+                  <div class="emp-cell">
+                    <div class="mini-avatar mini-avatar--red">AK</div>
+                    <div>
+                      <p class="emp-name">Arjun Kapoor</p>
+                      <p class="emp-dept">Sales</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="td"><span class="leave-type-tag">Maternity</span></td>
+                <td class="td"><span class="date-range">Mar 20 – Apr 20</span></td>
+                <td class="td"><span class="days-count days-count--red">30d</span></td>
+                <td class="td"><span class="status-pill status-pill--approved">Approved</span></td>
+                <td class="td">
+                  <div class="action-btns">
+                    <button class="icon-btn" title="View">👁</button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 5 -->
+              <tr class="table-row">
+                <td class="td">
+                  <div class="emp-cell">
+                    <div class="mini-avatar mini-avatar--purple">PS</div>
+                    <div>
+                      <p class="emp-name">Priya Sharma</p>
+                      <p class="emp-dept">Marketing</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="td"><span class="leave-type-tag">Casual</span></td>
+                <td class="td"><span class="date-range">Apr 5 – Apr 5</span></td>
+                <td class="td"><span class="days-count days-count--muted">1d</span></td>
+                <td class="td"><span class="status-pill status-pill--rejected">Rejected</span></td>
+                <td class="td">
+                  <div class="action-btns">
+                    <button class="icon-btn" title="View">👁</button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 6 -->
+              <tr class="table-row">
+                <td class="td">
+                  <div class="emp-cell">
+                    <div class="mini-avatar mini-avatar--cyan">RN</div>
+                    <div>
+                      <p class="emp-name">Rohan Nair</p>
+                      <p class="emp-dept">Engineering</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="td"><span class="leave-type-tag">Sick</span></td>
+                <td class="td"><span class="date-range">Apr 9 – Apr 10</span></td>
+                <td class="td"><span class="days-count days-count--cyan">2d</span></td>
+                <td class="td"><span class="status-pill status-pill--pending">Pending</span></td>
+                <td class="td">
+                  <div class="action-btns">
+                    <button class="icon-btn icon-btn--approve" title="Approve">✓</button>
+                    <button class="icon-btn icon-btn--reject" title="Reject">✕</button>
+                    <button class="icon-btn" title="View">👁</button>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="table-footer">
+          <span class="pagination-info">Showing 6 of 142 requests</span>
+          <div class="pagination-btns">
+            <button class="icon-btn">‹</button>
+            <button class="icon-btn icon-btn--active-page">1</button>
+            <button class="icon-btn">2</button>
+            <button class="icon-btn">3</button>
+            <button class="icon-btn">›</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RIGHT PANEL ── -->
+      <div class="right-panel">
+
+        <!-- Leave Balance -->
+        <div class="card card--anim-1">
+          <div class="card-header">
+            <h2 class="card-title">My Leave Balance</h2>
+            <span class="card-meta">FY 2025</span>
+          </div>
+          <div class="balance-list">
+
+            <div class="balance-row">
+              <div class="balance-info">
+                <p class="balance-label">Casual Leave</p>
+                <p class="balance-sub">Used 3 of 12</p>
+              </div>
+              <div class="balance-track">
+                <div class="progress-bar">
+                  <div class="progress-fill progress-fill--blue progress-fill--25"></div>
+                </div>
+                <span class="balance-count balance-count--blue">9</span>
+              </div>
+            </div>
+
+            <div class="balance-row">
+              <div class="balance-info">
+                <p class="balance-label">Sick Leave</p>
+                <p class="balance-sub">Used 2 of 10</p>
+              </div>
+              <div class="balance-track">
+                <div class="progress-bar">
+                  <div class="progress-fill progress-fill--green progress-fill--20"></div>
+                </div>
+                <span class="balance-count balance-count--green">8</span>
+              </div>
+            </div>
+
+            <div class="balance-row">
+              <div class="balance-info">
+                <p class="balance-label">Earned Leave</p>
+                <p class="balance-sub">Used 10 of 18</p>
+              </div>
+              <div class="balance-track">
+                <div class="progress-bar">
+                  <div class="progress-fill progress-fill--yellow progress-fill--55"></div>
+                </div>
+                <span class="balance-count balance-count--yellow">8</span>
+              </div>
+            </div>
+
+            <div class="balance-row">
+              <div class="balance-info">
+                <p class="balance-label">Optional Holiday</p>
+                <p class="balance-sub">Used 0 of 2</p>
+              </div>
+              <div class="balance-track">
+                <div class="progress-bar">
+                  <div class="progress-fill progress-fill--purple progress-fill--0"></div>
+                </div>
+                <span class="balance-count balance-count--purple">2</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Quick Apply Form -->
+        <div class="card card--anim-2">
+          <div class="card-header">
+            <h2 class="card-title">Quick Apply</h2>
+            <span class="card-header-emoji">📝</span>
+          </div>
+          <div class="form-body">
+            <div class="form-group">
+              <label class="form-label">Leave Type</label>
+              <select class="form-control">
+                <option>Casual Leave</option>
+                <option>Sick Leave</option>
+                <option>Earned Leave</option>
+                <option>Maternity / Paternity</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">From</label>
+                <input class="form-control" type="date" value="2025-04-10"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label">To</label>
+                <input class="form-control" type="date" value="2025-04-11"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Reason</label>
+              <textarea class="form-control form-control--textarea" placeholder="Briefly describe your reason…"></textarea>
+            </div>
+            <button class="btn btn--primary btn--block">Submit Request →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── BOTTOM ROW ── -->
+    <div class="bottom-row">
+
+      <!-- On Leave Today -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">On Leave Today</h2>
+          <span class="count-chip">5 People</span>
+        </div>
+        <div class="team-list">
+
+          <div class="team-row">
+            <div class="mini-avatar mini-avatar--green mini-avatar--lg">VR</div>
+            <div class="team-info">
+              <p class="team-name">Vikram Reddy</p>
+              <p class="team-leave-type">🤒 Sick Leave</p>
+            </div>
+            <span class="team-dates">Apr 7 – 8</span>
+          </div>
+
+          <div class="team-row">
+            <div class="mini-avatar mini-avatar--red mini-avatar--lg">AK</div>
+            <div class="team-info">
+              <p class="team-name">Arjun Kapoor</p>
+              <p class="team-leave-type">👶 Maternity</p>
+            </div>
+            <span class="team-dates">Mar 20 – Apr 20</span>
+          </div>
+
+          <div class="team-row">
+            <div class="mini-avatar mini-avatar--purple mini-avatar--lg">KJ</div>
+            <div class="team-info">
+              <p class="team-name">Kavita Joshi</p>
+              <p class="team-leave-type">🏖️ Earned Leave</p>
+            </div>
+            <span class="team-dates">Apr 7 – 11</span>
+          </div>
+
+          <div class="team-row">
+            <div class="mini-avatar mini-avatar--yellow mini-avatar--lg">DG</div>
+            <div class="team-info">
+              <p class="team-name">Dev Gupta</p>
+              <p class="team-leave-type">🌴 Casual Leave</p>
+            </div>
+            <span class="team-dates">Apr 7</span>
+          </div>
+
+          <div class="team-row">
+            <div class="mini-avatar mini-avatar--cyan mini-avatar--lg">MT</div>
+            <div class="team-info">
+              <p class="team-name">Meera Tiwari</p>
+              <p class="team-leave-type">🏖️ Earned Leave</p>
+            </div>
+            <span class="team-dates">Apr 6 – 10</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Leave Distribution Chart -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Leave Distribution</h2>
+          <span class="card-meta">April 2025</span>
+        </div>
+        <div class="chart-body">
+          <div class="donut-wrap">
+            <svg class="donut-svg" width="130" height="130" viewBox="0 0 130 130">
+              <circle class="donut-track" cx="65" cy="65" r="52"/>
+              <circle class="donut-seg donut-seg--casual"   cx="65" cy="65" r="52" stroke-dasharray="124 202" stroke-dashoffset="0"    transform="rotate(-90 65 65)"/>
+              <circle class="donut-seg donut-seg--sick"     cx="65" cy="65" r="52" stroke-dasharray="88 238"  stroke-dashoffset="-124"  transform="rotate(-90 65 65)"/>
+              <circle class="donut-seg donut-seg--earned"   cx="65" cy="65" r="52" stroke-dasharray="72 254"  stroke-dashoffset="-212"  transform="rotate(-90 65 65)"/>
+              <circle class="donut-seg donut-seg--other"    cx="65" cy="65" r="52" stroke-dasharray="42 284"  stroke-dashoffset="-284"  transform="rotate(-90 65 65)"/>
+            </svg>
+            <div class="donut-center">
+              <span class="donut-num">142</span>
+              <span class="donut-sub">total</span>
+            </div>
+          </div>
+          <div class="legend">
+            <div class="legend-item">
+              <div class="legend-dot legend-dot--blue"></div>
+              <span class="legend-label">Casual</span>
+              <span class="legend-value legend-value--blue">54</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot legend-dot--green"></div>
+              <span class="legend-label">Sick</span>
+              <span class="legend-value legend-value--green">38</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot legend-dot--yellow"></div>
+              <span class="legend-label">Earned</span>
+              <span class="legend-value legend-value--yellow">31</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot legend-dot--purple"></div>
+              <span class="legend-label">Other</span>
+              <span class="legend-value legend-value--purple">19</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- spacer -->
+    <div class="page-spacer"></div>
+
+  </main>
+</body>
+</html>
