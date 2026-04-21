@@ -1,0 +1,164 @@
+/* Main container */
+.approvals-container {
+  padding: 30px;
+  /* margin-left: 220px; if you have sidebar like Aside */
+  background: none;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Title */
+.approvals-container h2 {
+  font-size: 50px;
+  font-weight: 700;
+  color: skyblue;
+  margin-bottom: 20px;
+  /* border-left: 5px solid orangered; */
+  padding-left: 10px;
+  /* background-color: skyblue; */
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: 350px;
+  
+}
+.go-back-btn
+{
+      margin-bottom: 15px;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    border-radius: 10px;
+    text-align: left;
+    width: 100px;
+    height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Empty state */
+.empty-text {
+  font-size: 18px;
+  color: #6b7280;
+  margin-top: 20px;
+}
+
+/* Card container grid */
+.leave-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.reply-icon
+{
+  color: #f97316;
+  font-size: 58px;
+  margin-right: 10px;
+}
+/* Leave card */
+.leave-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 6px solid #f97316;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+
+.leave-card {
+    position: relative; /* IMPORTANT for positioning X */
+}
+
+.leave-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Text styles */
+.leave-card p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #374151;
+}
+
+.leave-card b {
+  color: #111827;
+}
+
+/* Status badge */
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.status.Pending {
+  background: #fff7ed;
+  color: #f97316;
+}
+
+.status.Approved {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.status.Rejected {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* Buttons container */
+.button-group {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Approve button */
+.approve-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #16a34a;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.approve-btn:hover {
+  background: #15803d;
+}
+
+/* Reject button */
+.reject-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #dc2626;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reject-btn:hover {
+  background: #b91c1c;
+}
