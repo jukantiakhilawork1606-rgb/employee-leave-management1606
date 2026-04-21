@@ -1,0 +1,13 @@
+table th {
+    color: skyblue;
+}
+
+.card1-title {
+    color: orangered;
+}
+
+.card1-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

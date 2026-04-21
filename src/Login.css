@@ -1,0 +1,91 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.login-form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.login-form h2 {
+  text-align: center;
+}
+
+.login-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.login-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #4facfe;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background: #3a8dde;
+}
+
+/* Forgot password */
+.forgot-password {
+  font-size: 13px;
+  color: #007bff;
+  text-align: right;
+  cursor: pointer;
+}
+
+/* Create account */
+.create-account {
+  text-align: center;
+  font-size: 14px;
+  color:black;
+}
+
+.create-account span {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Social login */
+.social-login {
+  text-align: center;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.google {
+  background: #db4437;
+}
+
+.facebook {
+  background: #3b5998;
+}
+
+.social-buttons button {
+  flex: 1;
+  padding: 8px;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
